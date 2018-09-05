@@ -1,0 +1,11 @@
+- id: '1535912802202'
+  alias: WakeUp
+  trigger:
+  - at: '21:35'
+    platform: time
+  condition: []
+  action:
+    service: light.turn_on
+    entity_id: light.hue_ambiance_lamp_3
+    data:
+      transition: 900

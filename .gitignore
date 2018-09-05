@@ -1,0 +1,11 @@
+.HA_VERSION
+.uuid
+.storage/*
+
+*.log
+*.pyc
+*.db
+
+dash/compiled/*
+secrets.yaml
+known_devices.yaml
