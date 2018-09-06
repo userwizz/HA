@@ -49,7 +49,44 @@ weather:
       forecast_temperature_min: sensor.dark_sky_overnight_low_temperature_1
       forecast_temperature_max: sensor.dark_sky_daytime_high_temperature_1
 
+light_bedroom:
+    widget_type: light
+    entity: light.bedroom
+    title: Bedroom
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb
+    on_attributes:
+        brightness: 100
+
+light_kids:
+    widget_type: light
+    entity: light.kids
+    title: Kids
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb
+    on_attributes:
+        brightness: 100
+
+light_livingroom:
+    widget_type: light
+    entity: light.livingroom
+    title: Livingroom
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb
+    on_attributes:
+        brightness: 100
+
+light_all:
+    widget_type: light
+    entity: group.all_lights
+    title: All
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb
+    on_attributes:
+        brightness: 100
+
 
 layout:
-    - clock
     - weather(2x2)
+    - 
+    - clock, light_bedroom, light_kids, light_livingroom, light_all
