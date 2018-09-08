@@ -1,11 +1,13 @@
 - id: '1535912802202'
   alias: WakeUp
   trigger:
-  - at: '21:35'
-    platform: time
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
+
   condition: []
   action:
     service: light.turn_on
-    entity_id: light.hue_ambiance_lamp_3
+    entity_id: light.livingroom
     data:
-      transition: 900
+      transition: 60
+      brightness: 255

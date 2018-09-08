@@ -52,35 +52,28 @@ map:
 # Track the sun
 sun:
 
-# Weather prediction
-sensor:
-  - platform: darksky
-    api_key: !secret weather_api_key
-    forecast: 1
-    monitored_conditions:
-      - summary
-      - icon
-      - temperature
-      - temperature_high
-      - temperature_low
-      - wind_speed
-      - wind_bearing
-      - apparent_temperature
-      - humidity
-      - precip_probability
-      - precip_intensity
-      - precip_type
-      - pressure
-
-
-
 # Text to speech
 tts:
   - platform: google
 
-# Cloud
-cloud:
+# For wakeup light
+input_number: 
+  alarmhour:
+    name: Hour
+    icon: mdi:timer
+    initial: 9
+    min: 0
+    max: 23
+    step: 1
+  alarmminutes:
+    name: Minutes
+    icon: mdi:timer
+    initial: 0
+    min: 0
+    max: 55
+    step: 5
 
+sensor: !include sensors.yaml 
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

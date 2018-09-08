@@ -1,0 +1,34 @@
+# for weather
+- platform: darksky
+  api_key: !secret weather_api_key
+  forecast: 1
+  monitored_conditions:
+    - summary
+    - icon
+    - temperature
+    - temperature_high
+    - temperature_low
+    - wind_speed
+    - wind_bearing
+    - apparent_temperature
+    - humidity
+    - precip_probability
+    - precip_intensity
+    - precip_type
+    - pressure
+
+# for current time
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'time_date'
+    - 'time_utc'
+
+# for alarm time
+- platform: template
+  sensors:
+    alarm_time:
+      friendly_name: 'Time'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
