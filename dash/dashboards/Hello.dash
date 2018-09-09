@@ -2,7 +2,7 @@
 ## Main arguments, all optional
 ##
 title: Main Panel
-widget_dimensions: [120, 120]
+widget_dimensions: [120, 150]
 widget_size: [1, 1]
 widget_margins: [5, 5]
 rows: 3
@@ -90,15 +90,15 @@ input_min:
     entity: input_number.alarmminutes
     title: Min
     use_comma: 1
+    precision: 0
 
 input_hour:
     widget_type: input_slider
     entity: input_number.alarmhour
     title: Hour
-    use_comma: 1
-    title2: blaa
+    precision: 0
 
 layout:
-    - weather(2x2)
-    - input_hour, input_min
     - clock, light_bedroom, light_kids, light_livingroom, light_all
+    - weather(2x2), input_hour, input_min
+
