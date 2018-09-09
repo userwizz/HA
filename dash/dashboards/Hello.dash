@@ -88,17 +88,26 @@ light_all:
 input_min:
     widget_type: input_slider
     entity: input_number.alarmminutes
-    title: Min
+    title: Wake-up light
+    title2: Minutes
     use_comma: 1
     precision: 0
 
 input_hour:
     widget_type: input_slider
     entity: input_number.alarmhour
-    title: Hour
+    title: Wake-up light
+    title2: Hour
     precision: 0
+
+power_switch:
+    widget_type: switch
+    entity: switch.plug_1
+    title: Power switch
+    icon_on: mdi-power-plug
+    icon_off: mdi-power-plug-off
 
 layout:
     - clock, light_bedroom, light_kids, light_livingroom, light_all
-    - weather(2x2), input_hour, input_min
+    - weather(2x2), input_hour, input_min, power_switch
 

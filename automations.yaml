@@ -1,13 +1,35 @@
-- id: '1535912802202'
-  alias: WakeUp
+- id: 'wake_up'
+  alias: wake_up
   trigger:
     platform: template
     value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
-
   condition: []
   action:
     service: light.turn_on
-    entity_id: light.livingroom
+    entity_id: light.bedroom
     data:
-      transition: 60
+      transition: 900
       brightness: 255
+
+- id: 'bed_time'
+  alias: bed_time
+  trigger:
+  - at: '20:00'
+    platform: time
+  condition: []
+  action:
+    service: light.turn_on
+    entity_id: light.kids
+    data:
+      brightness: 1
+
+- id: 'lights_off'
+  alias: lights_off
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "02:00:00"
+  condition: []
+  action:
+    service: light.turn_off
+    entity_id: group.all_lights

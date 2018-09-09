@@ -14,3 +14,4 @@ hadashboard:
    dash_dir: /conf/dashboards
    dash_force_compile: 1
    dash_compile_on_start: 1
+   dash_password: !secret dash_pw

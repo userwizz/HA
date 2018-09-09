@@ -46,8 +46,10 @@ history:
 # View all events in a logbook
 logbook:
 
-# Enables a map showing the location of tracked devices
-map:
+switch:
+  - platform: tplink
+    name: plug_1
+    host: 192.168.1.109
 
 # Track the sun
 sun:
@@ -61,7 +63,7 @@ input_number:
   alarmhour:
     name: Hour
     icon: mdi:timer
-    initial: 9
+    initial: 7
     min: 0
     max: 23
     step: 1
