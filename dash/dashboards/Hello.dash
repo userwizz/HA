@@ -88,7 +88,7 @@ light_all:
 input_min:
     widget_type: input_slider
     entity: input_number.alarmminutes
-    title: Wake-up light
+    title: Wake-up
     title2: Minutes
     use_comma: 1
     precision: 0
@@ -96,7 +96,22 @@ input_min:
 input_hour:
     widget_type: input_slider
     entity: input_number.alarmhour
-    title: Wake-up light
+    title: Wake-up
+    title2: Hour
+    precision: 0
+
+input_min_2:
+    widget_type: input_slider
+    entity: input_number.alarmminutes_2
+    title: Wake-up, kids
+    title2: Minutes
+    use_comma: 1
+    precision: 0
+
+input_hour_2:
+    widget_type: input_slider
+    entity: input_number.alarmhour_2
+    title: Wake-up, kids
     title2: Hour
     precision: 0
 
@@ -110,4 +125,4 @@ power_switch:
 layout:
     - clock, light_bedroom, light_kids, light_livingroom, light_all
     - weather(2x2), input_hour, input_min, power_switch
-
+    - input_hour_2, input_min_2

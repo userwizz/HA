@@ -28,3 +28,11 @@
     alarm_time:
       friendly_name: 'Time'
       value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
+
+# for alarm time, kids
+- platform: template
+  sensors:
+    alarm_time_2:
+      friendly_name: 'Time, kids'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour_2") | int, states("input_number.alarmminutes_2") | int) }}'
+

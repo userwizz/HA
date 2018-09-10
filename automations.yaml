@@ -11,6 +11,20 @@
       transition: 900
       brightness: 255
 
+- id: 'wake_up_kids'
+  alias: wake_up_kids
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_time_2.state }}'
+  condition: []
+  action:
+    service: light.turn_on
+    entity_id: light.kids
+    data:
+      transition: 900
+      brightness: 255
+
+
 - id: 'bed_time'
   alias: bed_time
   trigger:
