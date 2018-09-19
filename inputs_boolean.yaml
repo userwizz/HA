@@ -1,0 +1,4 @@
+wake_up_switch:
+  name: Wake-up switch
+  initial: on
+  icon: mdi:alarm

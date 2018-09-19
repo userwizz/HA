@@ -32,7 +32,8 @@ logbook:
 sun:
 
 # config files
-input_number: !include inputs.yaml 
+input_number: !include inputs_number.yaml 
+input_boolean: !include inputs_boolean.yaml
 sensor: !include sensors.yaml 
 switch: !include switches.yaml
 group: !include groups.yaml

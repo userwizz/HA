@@ -115,6 +115,13 @@ input_hour_2:
     title2: Hour
     precision: 0
 
+input_wakeup_switch:
+    widget_type: input_boolean
+    title: Wake-up light
+    entity: input_boolean.wake_up_switch
+    icon_on: mdi-alarm
+    icon_off: mdi-alarm-off
+
 power_switch:
     widget_type: switch
     entity: switch.plug_1
@@ -124,5 +131,5 @@ power_switch:
 
 layout:
     - clock, light_bedroom, light_kids, light_livingroom, light_all
-    - weather(2x2), input_hour, input_min, power_switch
-    - input_hour_2, input_min_2
+    - weather(2x2), input_hour, input_min, input_wakeup_switch
+    - input_hour_2, input_min_2, power_switch
