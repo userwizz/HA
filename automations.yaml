@@ -19,7 +19,10 @@
   trigger:
     platform: template
     value_template: '{{ states.sensor.time.state == states.sensor.alarm_time_2.state }}'
-  condition: []
+  condition:
+    condition: state
+    entity_id: input_boolean.wake_up_switch
+    state: 'on'
   action:
     service: light.turn_on
     entity_id: light.kids
@@ -31,7 +34,7 @@
 - id: 'bed_time'
   alias: bed_time
   trigger:
-  - at: '20:00'
+  - at: '19:30'
     platform: time
   condition: []
   action:
