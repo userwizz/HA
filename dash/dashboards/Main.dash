@@ -2,11 +2,11 @@
 ## Main arguments, all optional
 ##
 title: Main Panel
-widget_dimensions: [120, 150]
+widget_dimensions: [148, 148]
 widget_size: [1, 1]
 widget_margins: [5, 5]
 rows: 3
-columns: 6
+columns: 5
 global_parameters:
     use_comma: 0
     precision: 1
