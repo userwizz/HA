@@ -1,3 +1,7 @@
 - platform: tplink
   name: plug_1
   host: 192.168.1.109
+- platform: tplink
+  name: plug_flower
+  host: 192.168.1.116
+

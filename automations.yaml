@@ -30,7 +30,6 @@
       transition: 900
       brightness: 255
 
-
 - id: 'bed_time'
   alias: bed_time
   trigger:
@@ -43,6 +42,18 @@
     data:
       brightness: 1
 
+- id: 'night_light'
+  alias: night_light
+  trigger:
+  - at: '23:00'
+    platform: time
+  condition: []
+  action:
+    service: light.turn_on
+    entity_id: light.livingroom
+    data:
+      brightness: 1
+
 - id: 'lights_off'
   alias: lights_off
   trigger:
@@ -52,3 +63,23 @@
   action:
     service: light.turn_off
     entity_id: group.all_lights
+
+- id: 'lights_on_flower'
+  alias: lights_on_flower
+  trigger:
+  - at: '10:00'
+    platform: time
+  condition: []
+  action:
+    service: switch.turn_on
+    entity_id: switch.plug_flower
+
+- id: 'lights_off_flower'
+  alias: lights_off_flower
+  trigger:
+  - at: '16:00'
+    platform: time
+  condition: []
+  action:
+    service: switch.turn_off
+    entity_id: switch.plug_flower  
